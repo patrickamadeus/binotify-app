@@ -1,0 +1,130 @@
+textarea:focus, input:focus{
+    outline: none;
+  }
+  
+  body {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+  }
+  
+  .card {
+    width: 50%;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 50px 30px;
+    border-radius: 10px;
+    display: block;
+    justify-content: center;
+  }
+  
+  .whiteButton {
+    background-color: white;
+    width:80%;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    border-radius: 30px;
+    padding: 15px 20px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: black;
+  }
+
+  
+  .whiteButton:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+  }
+
+  #registerButton:disabled {
+    background-color: rgba(255, 255, 255, 0.140);
+    color : white;
+  }
+
+  #registerButton:disabled:hover {
+    background-color: rgba(255, 255, 255, 0.140);
+    color : white;
+    transform: scale(1);
+  }
+  
+  .logo {
+    width: 120px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600;
+    color: white;
+  }
+  
+  h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .inputBox {
+    width: 80%;
+    margin-bottom: 15px;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    background-color: #333333;
+    padding: 10px;
+    border: none;
+    color: #898a89;
+  }
+  
+  .inputBox:focus {
+    border: 3px solid #555;
+  }
+  
+  #formRegister {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navOther {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 200;
+    font-size: 10pt;
+    letter-spacing: 2px;
+    color: white;
+  }
+  
+  #linkOther {
+    color: white;
+    font-weight:600;
+  }
+  
+  #linkOther:hover{
+    color: #555;
+  }
+
+  #warningText {
+    color: red;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 200;
+    font-size: 10pt;
+    text-align: start;
+  }
+
+  .warningTextRegister {
+    color : white;
+  }

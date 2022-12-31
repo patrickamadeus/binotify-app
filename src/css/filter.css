@@ -1,0 +1,89 @@
+#filter_btn {
+    color: #b2b2b2;
+}
+
+.list__genre{
+    position: absolute;
+    background-color: #d9d9d9;
+    width: 15%;
+    height: 15%;
+    margin-top: 5px;
+    padding: 5px;
+    color: black;
+    display: none;
+    z-index: 99;
+    overflow: auto;
+}
+
+.genre_btn.open ~ .list__genre {
+    display: block;
+}
+
+.list__genre .list__genre_item {
+    display: flex;
+    align-items: center;
+    letter-spacing: 0;
+    font-weight: 400;
+    list-style: none;
+    cursor: pointer;
+    transition: 0,3s;
+    padding: 2px;
+}
+
+.list__genre .list__genre_item:hover {
+    background-color: #b2b2b2;
+}
+
+.list__genre_item .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1px solid black;
+    transition: all 0.3s ease-in-out;
+}
+
+.list__genre_item.checked .checkbox{
+    background-color: black;
+    border-color: black;
+}
+
+.checkbox .bx-check {
+    font-size: 12pt;
+    transform: scale(0);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.list__genre_item.checked .bx-check {
+    transform: scale(1);
+}
+
+.title_btn.asc .bxs-down-arrow {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.title_btn.desc .bxs-down-arrow {
+    display: inline-block;
+}
+
+.title_btn .bxs-down-arrow {
+    display: none;
+}
+
+.date_btn.asc .bxs-down-arrow {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.date_btn.desc .bxs-down-arrow {
+    display: inline-block;
+}
+
+.date_btn .bxs-down-arrow {
+    display: none;
+}

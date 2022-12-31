@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: php-apache-container
+    image: php-apache
+    build: .
+    volumes:
+      - ./src:/var/www/html/
+    ports:
+      - 6543:80

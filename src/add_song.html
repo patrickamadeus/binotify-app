@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+    <link rel="stylesheet" href="css/add_song.css"/>
+    <link rel="stylesheet" href="css/music_player.css" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"/>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="grid-container">
+        <div class="sidebar__navbar">
+            <img src="static/images/logowhite.png" alt="logo" class="logo">
+            <hr>
+            <div class="search">
+                <i class='bx bx-search-alt-2' style='color:#000000' ></i>
+                <input type="text" name="search" id="album_filter__input" placeholder="Search">
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <a href="sidebar.html">
+                        <i class='bx bxs-home' style='color:#b2b2b2'  ></i>
+                        <span class="list-name">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="album.html">
+                        <i class='bx bx-album'></i>
+                        <span class="list-name">Album</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="premium_artist.html">
+                        <i class='bx bxs-user-account'></i>
+                        <span class="list-name">Premium Artist</span>
+                    </a>
+                </li>
+                <li id = "add_song__button">
+                    <a href="add_song.html">
+                        <i class='bx bxs-music' style='color:#b2b2b2' ></i>
+                        <span class="list-name">Add Song</span>
+                    </a>
+                </li>
+                <li id = "add_album__button">
+                    <a href="add_album.html">
+                        <i class='bx bxs-add-to-queue'></i>
+                        <span class="list-name">Add Album</span>
+                    </a>
+                </li>
+                <li id = "detail_user__button">
+                    <a href="detail_user.html">
+                        <i class='bx bx-user' style='color:#b2b2b2' ></i>
+                        <span class="list-name">User List</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="body">
+            <div class = "user__navbar">
+                <div class="user__pack">
+                        <box-icon name='user-circle' type='solid' class="user-icon" color='#b2b2b2' ></box-icon>
+                        <p id="username_holder" onclick="toggleMenu()">Hi, Welcome</p>
+                    <div class="user__wrap">
+                        <div class="user__wrap_item" id = "logout">
+                            <a href="login.html">
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form id="addSongForm" method = "post">
+                <div class="top__detail">
+                    <div class="song_img__box">
+                        <img src="" alt="" id = "add_song__img">
+                        <section>
+                            <label class="upload_img__button" for="add_song_detail__img">
+                                <i class='bx bx-upload' style='color:#b2b2b2'  ></i>
+                            </label>
+                            <input type="file" id="add_song_detail__img" name="songimgfile" onchange="loadFile(event)" accept="image/*">
+                        </section>
+                    </div>
+                    <section id="add_song__title">
+                        <h5 id = "song__notes">SONG</h5>
+                        <input type="text" id="add_song_detail__title" name="songtitle" placeholder="Song Title.." required>
+                    </section>
+                </div>
+                <div class="bottom__detail">
+                    <section class="add_song__line">
+                        <section class="add_song__info">
+                            <p>ARTIST</p>
+                        </section>
+                            <input type="text" id="add_song_detail__name" name="songsinger" placeholder="Singer Name.." required>
+                    </section>
+                    <section class="add_song__line">
+                        <section class="add_song__info">
+                            <p>RELEASE DATE</p>
+                        </section>
+                        <input type="date" id="add_song_detail__date" name = "songdate" required>
+                    </section>
+                    <section class="add_song__line">
+                        <section class="add_song__info">
+                            <p>FILE</p>
+                        </section>
+                            <label class="upload__button" for="add_song__file">
+                                <i class='bx bx-upload' style='color:#b2b2b2'  ></i>
+                            </label>
+                            <input id="add_song__file" type="file" accept=".mp3" name = "songmp3file" required onchange="uploadSong(event)">
+                    </section>
+                    <section class="add_song__line">
+                        <section class="add_song__info">
+                            <p>DURATION</p>
+                        </section>
+                            <p id="songmp3duration" name="songmp3duration"></p>
+                    </section>
+                    <section class="add_song__line">
+                        <section class="add_song__info">
+                            <p>GENRE</p>
+                        </section>
+                        <div class="add_song_genre">
+                            <select required name="songgenre" id="song__genre">
+                                <option value="0">Select Genre:</option>
+                                <option value="Pop">Pop</option>
+                                <option value="Jazz">Jazz</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Country">Country</option>
+                                <option value="EDM">EDM</option>
+                                <option value="Instrumental">Instrumental</option>
+                                <option value="Hip Hop">Hip Hop</option>
+                                <option value="Blues">Blues</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="add_song__line">
+                        <section class="add_song__info">
+                            <p> ALBUM </p>
+                        </section>
+                        <section class="add_song_genre">
+                            <div id = "album_option__container"></div>                                       
+                        </section>
+                    </section>
+                    <section class="add_song__line" id="for_button">
+                        <input type="button" value="ADD SONG" class="theButton" id="addSongSubmitButton"/>
+                    </section>
+                </div>
+            </form>
+        </div> 
+        <div class="music__bar">
+            <div class="music-player">
+                <div class="song-bar">
+                    <div class="song-infos">
+                        <div class="image-container">
+                            <img src="static/images/no-song.png" alt="" id = "music_bar_detail__img" onerror="this.src='static/images/no-song.png';">
+                        </div>
+                        <div class="song-description">
+                            <p class="title" id="music_bar_detail__title">
+                            </p>
+                            <p class="artist" id="music_bar_detail__singer"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-controller">
+                    <section class="playerBtn">
+                        <button class="player-button"></button>
+                        <p id="guestPlaybackWarning"></p> 
+                    </section>
+                    <div class="progress-container">
+                        
+                        <input type="range" class="timeline" max="100" value="0">
+                        
+                    </div>
+                </div>
+                <div class="other-features">
+                    <div class="volume-bar">
+                        <i class="fas fa-volume-down"></i>
+                        <div class="volume-container">
+                            <input type="range" class="timeline-volume" max="100" value="50">
+                        </div>
+                    </div>
+                </div>
+                <audio src="" controls id = "main-audio"></audio>
+            </div>
+        </div>
+      </section>
+    <script>
+        let wrap = document.querySelector(".user__wrap");
+
+        function toggleMenu(){
+            wrap.classList.toggle("opened");
+        }
+    </script>
+    <script src="scripts/helpers/addSong.js" defer></script>
+    <script src="scripts/admin/addSong.js" defer></script>
+    <script src="scripts/helpers/generateAlbumChoice.js"></script>
+    <script src="scripts/helpers/audioPlayer.js"></script>
+    <script src="scripts/helpers/fetcher.js"></script>
+    <script src="scripts/helpers/sessionHandler.js"></script>
+    <script src="scripts/auth/logout.js"></script>
+</body>
+</html>

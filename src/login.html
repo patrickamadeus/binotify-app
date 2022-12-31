@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
+    <title>Epify</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class = "card">
+            <img src="static/images/logowhite.png" alt="logo" class="logo">
+            <h2>Log in to continue.</h2>
+            <form id = "formLogin">
+                <input class="inputBox" type="text" name="authFormLoginUsername" id="authUsername" placeholder="Enter your username" required>
+                <input class="inputBox" type="password" name="authFormLoginPassword" id="authPassword" placeholder="Enter your password" required>
+                <p id = "warningTextLogin"></p>
+                <button id="greenButton" class= "theButton" type="submit" value="Login" name = "authFormLogin"> LOG IN </button>
+                <h3><span>OR</span></h3>
+                <button id="whiteButton" class= "theButton" type="submit" value="Login" name = "authFormLogin"> GUEST LOGIN </button>
+            </form>
+            <p class="navOther">Don't have an account? <a id="linkOther" href="/register.html">SIGN UP</a></p>
+        </div>
+    <script src="scripts/auth/authLogin.js"></script>
+    <script src="scripts/helpers/fetcher.js"></script>
+    <script src="scripts/helpers/sessionHandler.js"></script>
+</body>
+</html>

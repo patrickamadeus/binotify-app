@@ -1,0 +1,268 @@
+input[type=text]:focus{
+  outline: none;
+}
+
+.top__detail {
+height: 35%;
+
+}
+
+#left_side__detail {
+  width:30%;
+  min-width: 200px;
+}
+
+#right_side__detail {
+  width:70%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+#addSongForm {
+height: 92%;
+width: 100%;
+}
+
+.details {
+  height:10%;
+  max-height: 25px;
+  margin: 5% 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.song_img__box {
+width: 150px;
+display: block;
+height: 150px;
+object-fit: cover;
+position: relative;
+margin: 0 5%;
+background-color: #d9d9d9;
+}
+
+#add_song_detail__title {
+  width: 600px;
+  height:50%;
+  min-height: 28px;
+  padding: 5px;
+  display: inline-block;
+  background-color: #282828;
+  border: 1px solid #282828;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 20pt;
+  color: white;
+}
+
+.upload_container {
+  height: 100%;
+  max-height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.add_song__input {
+  width: 80%;
+  height:50%;
+  min-height: 28px;
+  padding: 5px;
+  display: inline-block;
+  background-color: #5c5c5c;
+  border: 1px solid #5c5c5c;
+  box-sizing: border-box;
+}
+
+#add_song__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#add_song_detail__name {
+  margin: 0;
+  width: 80%;
+  min-width: 300px;
+  padding: 5px;
+  display: inline-block;
+  background-color: #5c5c5c;
+  border: 1px solid #5c5c5c;
+  box-sizing: border-box;
+}
+
+#add_song_detail__date {
+  width: 80%;
+  min-width: 300px;
+  height:50%;
+  min-height: 28px;
+  padding: 5px;
+  display: inline-block;
+  background-color: #5c5c5c;
+  border: 1px solid #5c5c5c;
+  box-sizing: border-box;
+}
+
+.add_song_genre {
+  width: 80%;
+  min-width: 300px;
+}
+
+#song__genre {
+  width: 100%;
+  background-color: #5c5c5c;
+}
+
+input[type="file"] {
+  position: absolute;
+  display: none;
+}
+.add_song__input {
+  position: relative;
+}
+
+.upload__button {
+  display: inline-block;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px double white;
+  padding: 2px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.upload__button:hover {
+  background-color: #282828;
+}
+
+.bx-upload {
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  color: #b2b2b2;
+}
+
+.bottom__detail{
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 20px;
+  height: 65%;
+  overflow: hidden;
+}
+
+.add_song__line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 10%;
+  max-height: 25px;
+  margin: 10px 5px;
+}
+
+.add_song__info {
+  width:30%;
+  min-width: 200px;
+  max-width: 248px;
+}
+
+
+.add_song__line .add_song__input {
+  width: 70%;
+  height: 100%;
+  padding: 5px;
+  display: inline-block;
+  background-color: #5c5c5c;
+  border: 1px solid #5c5c5c;
+  box-sizing: border-box;
+}
+
+#album_option__container select {
+  background-color: #5c5c5c;
+  width: 100%;
+}
+
+/* GENRE SELECTION */
+
+.add_song__genre {
+  position: relative;
+  width: 80%;
+  height: 100%;
+}
+
+#for_button {
+  flex-direction: row-reverse;
+}
+
+@media (max-width:900px){
+  .add_song__line{
+    max-height: 10px;
+  }
+
+  .song_img__box {
+    width: 125px;
+    height: 125px;
+  }
+
+  #add_song__title {
+    width: 500px;
+  }
+
+  .bottom__detail {
+    height: 65%;
+    padding: 3%;
+  }
+
+  .bottom__detail p{
+    font-size: 8pt;
+  }
+
+  #add_song_detail__title {
+    font-size: 15pt;
+    width:300px;
+  }
+}
+
+@media (min-width:1300px){
+  .song_img__box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bottom__detail {
+    padding: 5%;
+  }
+
+  .bottom__detail p{
+    font-size: 12pt;
+  }
+
+  #add_song__title {
+    width: 700px;
+  }
+
+  #add_song_detail__name {
+    font-size: 13pt;
+  }
+
+  #add_song_detail__date {
+    font-size: 13pt;
+  }
+
+  #song__genre{
+    font-size: 15pt;
+  }
+
+  #album_option__container select {
+    font-size: 15pt;
+    background-color: #5c5c5c;
+  }
+
+  .bx-upload {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+  }
+}

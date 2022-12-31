@@ -1,0 +1,260 @@
+.top__detail {
+    background-image: linear-gradient(black,#4a4a4a);
+    height:40%;
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#edit_song {
+    width: 100%;
+    height: 100%;
+}
+
+#music_detail__title {
+    font-weight: 700;
+    font-size: 30pt;
+    color: white;
+}
+
+.bottom__detail {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0 5% 0;
+}
+
+#left_side__detail {
+    width:50%;
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+#right_side__detail {
+    width:50%;
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.details {
+    height:33%;
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+}
+
+.bottom__detail p {
+    color: #b2b2b2;
+    font-weight: 500;
+    font-size: 10pt;
+    letter-spacing: 2pt;
+    margin-bottom: 5px;
+}
+
+.bottom__detail h1 {
+    font-weight: 600;
+    font-size: 15pt;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#buttons {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+.theButton {
+    width:20%;
+    max-width: 300px;
+    border: none;
+    margin: 15px 10px 0 10px;
+    padding: 15px 20px;
+  }
+
+  .theButton:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+  }
+
+  #whiteButton {
+    background-color: white;
+    color: black;
+  }
+  
+  #whiteButton:hover {
+    background-color: #f2f2f2cb;
+  }
+
+  #redButton {
+    background-color: #C13B3B;
+  }
+
+  #redButton:hover {
+    background-color: #a12a2a;
+  }
+
+  .song_img__box {
+    width: 150px;
+    display: block;
+    height: 150px;
+    object-fit: cover;
+    position: relative;
+    margin: 0 5%;
+  }
+
+input[type="file"] {
+    position: absolute;
+    display: none;
+  }
+
+.bx-upload {
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+    color: #b2b2b2;
+}
+
+#album_option__container select {
+  background-color: #5c5c5c;
+  width: 80%;
+}
+
+#edit_song__title {
+  width: 600px;
+  height:50%;
+  min-height: 28px;
+  padding: 5px;
+  display: inline-block;
+  background-color: #282828;
+  border: 1px solid #282828;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 20pt;
+  color: white;
+}
+
+#song__genre {
+  width: 80%;
+  background-color: #5c5c5c;
+}
+
+#add_song_detail__date {
+  width: 80%;
+  min-width: 300px;
+  height:50%;
+  min-height: 28px;
+  padding: 5px;
+  display: inline-block;
+  background-color: #5c5c5c;
+  border: 1px solid #5c5c5c;
+  box-sizing: border-box;
+}
+
+#add_song_detail__name {
+    margin: 0;
+    width: 80%;
+    min-width: 300px;
+    padding: 5px;
+    display: inline-block;
+    background-color: #5c5c5c;
+    border: 1px solid #5c5c5c;
+    box-sizing: border-box;
+}
+
+#warning {
+    width: 100%;
+    padding-left: 5%;
+}
+
+#edit_song__warning_text {
+    margin-right: 10px;
+}
+
+#add_song_genre select {
+  width:80%;
+}
+
+@media (max-width:900px){
+    .song_img__box {
+        width: 125px;
+        height: 125px;
+    }
+
+    .bottom__detail {
+      padding: 3%;
+    }
+  
+    .bottom__detail p{
+      font-size: 8pt;
+    }
+
+    #edit_song__title {
+      font-size: 15pt;
+      width: 300px;
+    }
+
+    #add_song_detail__name {
+      min-width: 100px;
+    }
+
+    #add_song_detail__date {
+      min-width: 100px;
+    }
+
+    .theButton {
+      font-size: 8pt;
+      padding: 5px 10px;
+    }
+}
+
+@media (min-width:1300px){
+    .song_img__box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bottom__detail {
+      padding: 5%;
+    }
+  
+    .bottom__detail p{
+      font-size: 12pt;
+    }
+
+    .bx-upload {
+      width: 25px;
+      height: 25px;
+      font-size: 25px;
+    }
+
+    #edit_song__title {
+        width: 700px;
+    }
+
+    #song__genre{
+      font-size: 15pt;
+    }
+  
+    #album_option__container select {
+      font-size: 15pt;
+      background-color: #5c5c5c;
+    }
+
+    .bx-upload {
+      width: 25px;
+      height: 25px;
+      font-size: 25px;
+    }
+}

@@ -1,0 +1,210 @@
+#song_list__box #artist_list__header {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12pt;
+    font-weight: 500;
+    letter-spacing: 2pt;
+    color:#b2b2b2;
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 2px solid #b2b2b2 ;
+}
+
+#artist_list__header_no {
+    width: 5%;
+    margin-right: 20px;
+}
+
+#artist_list__header_name {
+    width: 90%;
+    margin-right: 20px;
+}
+
+#artist_list__header_song {
+    width: 30%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#artist_list__header_date {
+    width: 30%;
+    margin-right: 20px;
+}
+
+#artist_list button {
+    background-color: #121212;
+    border: none;
+}
+
+#artist_list button:active {
+    transform: rotate(180deg);
+}
+
+#artist_list__header_button {
+    width: 10%;
+    text-align: right;
+}
+
+#artist_list #artist_list__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+}
+
+#dashboard__itemcontainer .artist_list__items{
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.artist_list__items {
+    width: 100%;
+}
+
+.artist_list__line a {
+    text-decoration: none;
+}
+
+.artist_list__line {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    color:#b2b2b2;
+    padding: 10px 5px;
+    margin: 15px 0;
+    position: relative;
+}
+
+.artist_list__line:hover{
+    background-color: #575757;
+}
+
+.artist_list__line .artist_list__number {
+    width: 5%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.artist_list__line .artist_list__name {
+    width: 30%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.artist_list__line .artist_list__song {
+    width: 30%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.artist_list__line .artist_list__buttons {
+    width: 30%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.theButton {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 20px;
+    letter-spacing: 1.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+  }
+
+  #greenBtn {
+    background-color: #64D97E;
+  }
+
+  #pendingButton {
+    background-color: #F7C500;
+    color:black;
+  }
+
+  #approvedButton {
+    background-color: #64D97E;
+    color:black;
+  }
+
+  #approvedButton a{
+    text-decoration: none;
+    color:black;
+  }
+
+#rejectedButton {
+    background-color: white;
+    color:black;
+}
+
+  
+  /* DETAIL PREMIUM */
+
+  #header__title_detail {
+    padding: 0 30px;
+    margin: 0;
+    background-color: #4a4a4a;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+  }
+
+  .bx-play {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #line_detail {
+    padding: 25px 5px;
+    margin: 0;
+    border-bottom: white 1px solid;
+  }
+
+  @media (max-width:900px){
+    .theButton {
+        font-size: 8pt;
+        padding: 5px 10px;
+    }
+
+    #song_list__box #artist_list__header {
+        font-size: 9pt;
+        padding: 0;
+        padding-bottom: 3px;
+    }
+  }
+
+  @media (min-width:1300px){
+    .theButton {
+        font-size: 12pt;
+        padding: 10px 15px;
+    }
+
+
+  }

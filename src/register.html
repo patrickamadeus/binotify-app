@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+        }
+    </style>
+</head>
+<body>
+     <div class="card">
+        <img src="static/images/logowhite.png" alt="logo" class="logo">
+        <h2>Sign up for free to start listening.</h2>
+        <form id = "formRegister" method="post">
+            <input class="inputBox" type="email" name="authFormRegisterEmail" id="registerEmail" placeholder="Enter your email" value = "" required>
+            <input class="inputBox" type="text" name="authFormRegisterUsername" id="registerUsername" placeholder="Enter your username" value = ""  required>
+            <input class="inputBox" type="password" name="authFormRegisterPassword" id="registerPassword" placeholder="Enter your password" value = "" required>
+            <input class="inputBox" type="password" name="authFormRegisterPasswordConfirm" id="registerPasswordConfirm" placeholder="Confirm your password" value = "" required>
+            <button class="whiteButton" id = "registerButton" type="submit" value="Register" id = "registerButton"> Register </button>
+        </form>
+        <p class="navOther">Have an account? <a id="linkOther" href="/login.html">LOGIN</a></p>
+     </div>
+     <script src="scripts/auth/authRegister.js"></script>
+     <script src="scripts/helpers/fetcher.js"></script>
+</body>
+</html>

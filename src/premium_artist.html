@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/filter.css" />
+    <link rel="stylesheet" href="css/music_player.css" />
+    <link rel="stylesheet" href="css/premium_artist.css" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"/>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Premium Artist</title>
+</head>
+<body>
+    <section class="grid-container">
+        <div class="leftside-grid">
+            <div class="sidebar__navbar">
+                <img src="static/images/logowhite.png" alt="logo" class="logo">
+                <hr>
+                <div class="search">
+                    <i class='bx bx-search-alt-2' style='color:#000000' ></i>
+                    <input type="text" name="search" id="song_filter__input" placeholder="Search">
+                </div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="sidebar.html">
+                            <i class='bx bxs-home' style='color:#b2b2b2'  ></i>
+                            <span class="list-name">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="album.html">
+                            <i class='bx bx-album'></i>
+                            <span class="list-name">Album</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="premium_artist.html">
+                            <i class='bx bxs-user-account'></i>
+                            <span class="list-name">Premium Artist</span>
+                        </a>
+                    </li>
+                    <li id = "add_song__button">
+                        <a href="add_song.html">
+                            <i class='bx bxs-music' style='color:#b2b2b2' ></i>
+                            <span class="list-name">Add Song</span>
+                        </a>
+                    </li>
+                    <li id = "add_album__button">
+                        <a href="add_album.html">
+                            <i class='bx bxs-add-to-queue'></i>
+                            <span class="list-name">Add Album</span>
+                        </a>
+                    </li>
+                    <li id = "detail_user__button">
+                        <a href="detail_user.html">
+                            <i class='bx bx-user' style='color:#b2b2b2' ></i>
+                            <span class="list-name">User List</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            <div class = "user__navbar">
+                <div class="user__pack" onclick="toggleMenu()">
+                        <box-icon name='user-circle' type='solid' class="user-icon" color='#b2b2b2' ></box-icon>
+                        <p id="username_holder" onclick="toggleMenu()">Hi, Welcome</p>
+                    <div class="user__wrap">
+                        <div class="user__wrap_item" id = "logout">
+                            <a href="login.html">
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h1 class="page_title" id="header__title">Premium Artist</h1>
+                <div id="song_list__box">
+                    <section id="artist_list__header">
+                        <section id="artist_list__header_no">#</section>
+                        <section id="artist_list__header_name">
+                            NAME
+                        </section>
+                    </section>
+                    <section id="artist_list__container">
+                        <div class="artist_list__items" id="dashboard__itemcontainer_artist"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="music__bar">
+            <div class="music-player">
+                <div class="song-bar">
+                    <div class="song-infos">
+                        <div class="image-container">
+                            <img src="static/images/no-song.png" alt="" id = "music_bar_detail__img" onerror="this.src='static/images/no-song.png';">
+                        </div>
+                        <div class="song-description">
+                            <p class="title" id="music_bar_detail__title">
+                            </p>
+                            <p class="artist" id="music_bar_detail__singer"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-controller">
+                    <section class="playerBtn">
+                        <button class="player-button"></button>
+                        <p id="guestPlaybackWarning"></p> 
+                    </section>
+                    <div class="progress-container">
+                        
+                        <input type="range" class="timeline" max="100" value="0">
+                        
+                    </div>
+                </div>
+                <div class="other-features">
+                    <div class="volume-bar">
+                        <i class="fas fa-volume-down"></i>
+                        <div class="volume-container">
+                            <input type="range" class="timeline-volume" max="100" value="50">
+                        </div>
+                    </div>
+                </div>
+                <audio src="" controls id = "main-audio"></audio>
+            </div>
+        </div>
+      </section>
+    <script>
+        let wrap = document.querySelector(".user__wrap");
+
+        function toggleMenu(){
+            wrap.classList.toggle("opened");
+        }
+    </script>
+    <script src="scripts/premium/getPremiumArtist.js" defer></script>
+    <script src="scripts/premium/generatePremiumArtistDashboard.js" defer></script>
+    <script src="scripts/helpers/fetcher.js"></script>
+    <script src="scripts/helpers/audioPlayer.js"></script>
+    <script src="scripts/helpers/sessionHandler.js"></script>
+    <script src="scripts/auth/logout.js"></script>
+    <script src="scripts/helpers/selectBtn.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+    <link rel="stylesheet" href="css/detail-album.css" />
+    <link rel="stylesheet" href="css/detail-album-admin.css" />
+    <link rel="stylesheet" href="css/music_player.css" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"/>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="grid-container">
+        <div class="leftside-grid">
+            <div class="sidebar__navbar">
+                <img src="static/images/logowhite.png" alt="logo" class="logo">
+                <hr>
+                <div class="search">
+                    <i class='bx bx-search-alt-2' style='color:#000000' ></i>
+                    <input type="text" name="search" id="album_filter__input" placeholder="Search">
+                </div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="sidebar.html">
+                            <i class='bx bxs-home' style='color:#b2b2b2'  ></i>
+                            <span class="list-name">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="album.html">
+                            <i class='bx bx-album'></i>
+                            <span class="list-name">Album</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="premium_artist.html">
+                            <i class='bx bxs-user-account'></i>
+                            <span class="list-name">Premium Artist</span>
+                        </a>
+                    </li>
+                    <li id = "add_song__button">
+                        <a href="add_song.html">
+                            <i class='bx bxs-music' style='color:#b2b2b2' ></i>
+                            <span class="list-name">Add Song</span>
+                        </a>
+                    </li>
+                    <li id = "add_album__button">
+                        <a href="add_album.html">
+                            <i class='bx bxs-add-to-queue'></i>
+                            <span class="list-name">Add Album</span>
+                        </a>
+                    </li>
+                    <li id = "detail_user__button">
+                        <a href="detail_user.html">
+                            <i class='bx bx-user' style='color:#b2b2b2' ></i>
+                            <span class="list-name">User List</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            <div class = "user__navbar">
+                <div class="user__pack">
+                        <box-icon name='user-circle' type='solid' class="user-icon" color='#b2b2b2' ></box-icon>
+                        <p id="username_holder" onclick="toggleMenu()">Hi, Welcome</p>
+                    <div class="user__wrap">
+                        <div class="user__wrap_item" id = "logout">
+                            <a href="login.html">
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form id="edit_album">
+                <div class="top__detail">
+                    <section class="left_side__detail">
+                        <section id="album__img">
+                            <img src="" alt="" id = "album_detail__img" onerror="this.src='static/images/no-song.png';">
+                            <section>
+                                <label class="upload__button" for="add_album_detail__img">
+                                    <i class='bx bx-upload' style='color:#b2b2b2'  ></i>
+                                </label>
+                                <input type="file" id="add_album_detail__img" name="image_path" onchange="loadFile(event)" accept="image/*">
+                            </section>
+                        </section>
+                    </section>
+                    <section class="right_side__detail" >
+                        <h5 id = "album__notes">ALBUM</h5>
+                        <!-- <h1 id = "album_detail__title">Loading...</h1> -->
+                        <input type="text" id = "album_detail__title" class="edit_album__title" required name="judul" placeholder="">
+                        <section class="album_details"> 
+                            <h1 id = "album_detail__singer">Singer</h1>
+                            <span class="dot"></span>
+                            <h1 id = "album_detail__release">Release Date</h1>
+                            <span class="dot"></span>
+                            <h1 id = "album_detail__total_song">Songs</h1>
+                            <span class="dot"></span>
+                            <h2 id = "album_detail__duration">Duration</h1> 
+                        </section>
+                    </section>
+                </div>
+                <div class="bottom__detail">
+                    <div id="album_song_list">
+                        <section id="album_song_list__header">
+                            <section id="album_song_list__header_no">#</section>
+                            <section id="album_song_list__header_title">
+                                    <span class="title_btn__text">TITLE</span>
+                            </section>
+                            <section id="album_song_list__header_genre">
+                                    <span class="btn_text">GENRE</span>
+                            </section>
+                            <section id="album_song_list__header_date">
+                                    <span class="date_btn__text">DATE ADDED</span>
+                            </section>
+                            <section id="album_song_list__header_dur">
+                                <box-icon name='time-five' color='#b2b2b2' id="duration_icon"></box-icon>
+                            </section>
+                        </section>
+                        <section id="album_song_list__container">
+                            <div class="album_song_list__items" id="dashboard__itemcontainer"></div>
+                        </section>
+                    </div>
+                    <section id="buttons">
+                        <input type="submit" value="SAVE ALBUM" class="theButton" id="whiteButton"/>
+                        <input type="button" value="DELETE ALBUM" class="theButton" id="redButton" onclick="deleteAlbum();"/>
+                    </section>
+                    <section id="warning">
+                        <p id = "edit_album__warning_text" style = "color: white;"></p>
+                    </section>
+                </div>
+            </form>
+        </div>
+        <div class="music__bar">
+            <div class="music-player">
+                <div class="song-bar">
+                    <div class="song-infos">
+                        <div class="image-container">
+                            <img src="static/images/no-song.png" alt="" id = "music_bar_detail__img" onerror="this.src='static/images/no-song.png';">
+                        </div>
+                        <div class="song-description">
+                            <p class="title" id="music_bar_detail__title">
+                            </p>
+                            <p class="artist" id="music_bar_detail__singer"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-controller">
+                    <section class="playerBtn">
+                        <button class="player-button"></button>
+                        <p id="guestPlaybackWarning"></p> 
+                    </section>
+                    <div class="progress-container">
+                        
+                        <input type="range" class="timeline" max="100" value="0">
+                        
+                    </div>
+                </div>
+                <div class="other-features">
+                    <div class="volume-bar">
+                        <i class="fas fa-volume-down"></i>
+                        <div class="volume-container">
+                            <input type="range" class="timeline-volume" max="100" value="50">
+                        </div>
+                    </div>
+                </div>
+                <audio src="" controls id = "main-audio"></audio>
+            </div>
+        </div>
+      </section>
+
+    <script>
+        let wrap = document.querySelector(".user__wrap");
+
+        function toggleMenu(){
+            wrap.classList.toggle("opened");
+        }
+    </script>
+    <script src="scripts/admin/editAlbum.js"></script>
+    <script src="scripts/admin/deleteAlbum.js"></script>
+    <script src="scripts/helpers/editAlbum.js"></script>
+    <script src="scripts/helpers/fetcher.js"></script>
+    <script src="scripts/album/setAlbumDetailPage.js" defer></script>
+    <script src="scripts/helpers/audioPlayer.js"></script>
+    <script src="scripts/helpers/sessionHandler.js"></script>
+    <script src="scripts/Songs/generateSongsDashboard.js"></script>
+</body>
+</html>

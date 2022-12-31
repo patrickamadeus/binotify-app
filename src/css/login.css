@@ -1,0 +1,153 @@
+body {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+/* Card for login */
+.card {
+  width: 50%;
+  max-width: 400px;
+  height: 40%;
+  min-height: 400px;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  padding: 50px 30px;
+  border-radius: 10px;
+  display: block;
+  justify-content: center;
+}
+
+.theButton {
+  background-color: white;
+  width:80%;
+  border: none;
+  margin-top: 15px;
+  border-radius: 30px;
+  padding: 15px 20px;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: black;
+}
+
+.theButton:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+}
+
+#greenButton {
+  background-color: #18d760;
+}
+
+#greenButton:hover {
+  background-color: #22b058;
+}
+
+#whiteButton {
+  margin-top: 0;
+  background-color: white;
+  color: black;
+}
+
+#whiteButton:hover {
+  background-color: #f2f2f2cb;
+}
+
+
+.logo {
+  width: 120px;
+  margin: 0 auto;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  color: white;
+}
+
+h3 {
+  width: 80%; 
+  text-align: center; 
+  border-bottom: 1px solid #898a89; 
+  line-height: 0.1em;
+  font-weight: 200;
+  font-size:10pt;
+  margin: 20px 0 20px; 
+} 
+
+h3 span { 
+  background-color: black;
+  color: #898a89;
+  padding:0 10px; 
+}
+
+.inputBox {
+  width: 80%;
+  margin-bottom: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  position: relative;
+  background-color: #333333;
+  padding: 10px;
+  border: none;
+  color: #c3c3c3;
+}
+
+.inputBox:focus {
+  border: 3px solid #555;
+}
+
+#formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navOther {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 200;
+  font-size: 10pt;
+  letter-spacing: 2px;
+  color: white;
+}
+
+#linkOther {
+  color: white;
+  font-weight:600;
+}
+
+#linkOther:hover{
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+#warningTextLogin {
+  color: white;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 200;
+  font-size: 10pt;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}

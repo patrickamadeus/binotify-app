@@ -1,0 +1,204 @@
+.body {
+    padding: 0;
+}
+
+.user__pack {
+    top:20px;
+    right:20px;
+  }
+
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    margin : 10px 15px;
+    display: inline-block;
+}
+
+#album_detail__img {
+    width: 150px;
+    display: block;
+    height: 150px;
+    object-fit: cover;
+    margin: 0 5%;
+}
+
+#album__notes {
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size:15pt;
+    color:white;
+    margin-bottom: 5px;
+}
+
+.album_details {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.album_details h1 {
+    font-weight: 400;
+    font-size:15pt;
+    color: white;
+}
+
+.album_details #album_detail__duration {
+    font-weight: 400;
+    font-size:15pt;
+    margin-left: 5px;
+    color: #b2b2b2;
+}
+
+#album_detail__title {
+    font-weight: 700;
+    font-size: 30pt;
+    color: white;
+}
+
+#album_song_list {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#album_song_list #album_song_list__header {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12pt;
+    font-weight: 500;
+    letter-spacing: 2pt;
+    color:#b2b2b2;
+    padding-bottom: 10px;
+    width: 90%;
+    border-bottom: 2px solid #b2b2b2 ;
+}
+
+#album_song_list__header_no {
+    width: 5%;
+    margin-right: 20px;
+}
+
+#album_song_list__header_title {
+    width: 30%;
+    margin-right: 20px;
+}
+
+#album_song_list__header_genre {
+    width: 30%;
+    margin-right: 20px;
+}
+
+#album_song_list__header_date {
+    width: 30%;
+    margin-right: 20px;
+}
+
+#album_song_list button {
+    background-color: #121212;
+    border: none;
+}
+
+#album_song_list button:active {
+    transform: rotate(180deg);
+}
+
+#album_song_list__header_dur {
+    width: 10%;
+    text-align: right;
+}
+
+#album_song_list #album_song_list__container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 10px;
+}
+
+#album_song_list #album_song_list__container {
+    height:80%;
+    overflow-y: scroll;
+}
+
+#buttons {
+    height: 10%;
+    width: 96%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+@media (max-width:900px){
+    #album__notes {
+        font-size: 12pt;
+    }
+
+    #album_detail__img {
+        height: 125px;;
+        width: 125px;
+    }
+
+    #album_detail__title {
+        font-size: 20pt;
+    }
+
+    #album_song_list{
+        font-size: 9pt;
+    }
+
+    #album_song_list #album_song_list__container {
+        margin-top: 5px;
+    }
+
+    .album_details h1, .album_details #album_detail__duration {
+        font-size:12pt;
+    }
+
+    #album_song_list #album_song_list__header {
+        font-size: 8pt;
+        padding: 0;
+        padding-bottom: 3px;
+    }
+
+    #album_song_list__header_no {
+        width: 2%;
+    }
+
+    #album_song_list__header_title {
+        width: 40%;
+    }
+
+    #album_song_list__header_genre {
+        width: 20%;
+    }
+
+    #album_song_list__header_date {
+        width: 20%;
+    }
+
+    #duration_icon {
+        width: 14.5px;
+        height: 14.5px;
+    }
+
+    #album_song_list__header_no {
+        width: 2%;
+    }
+}
+
+@media (min-width:1300px){
+    #album_detail__img {
+        height:200px;
+        width: 200px;
+    }
+}
